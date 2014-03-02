@@ -6,3 +6,5 @@ extras/documentation
 build/
 vendor/
 composer/
+composer.phar
+composer.lock
