@@ -1,8 +1,7 @@
 {
     "name": "gabbydgab/gdg-gearman",
     "description": "Abstract gearman library that allows multi-processing strategies for ETL applications",
-    "license": "BSD-2-Clause",
-    "version": "0.1.0-dev",
+    "license": "BSD-2-Clause",    
     "type": "library",
     "minimum-stability": "dev",
     "keywords": [
@@ -27,7 +26,8 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.1.0-dev"
+            "dev-master": "0.1-dev",
+            "dev-develop": "1.0-dev"
         }
     },
     "autoload": {
