@@ -1,0 +1,41 @@
+{
+    "name": "gabbydgab/gdg-gearman",
+    "description": "Abstract gearman library that allows multi-processing strategies for ETL applications",
+    "license": "BSD-2-Clause",
+    "version": "0.1.0-dev",
+    "type": "library",
+    "minimum-stability": "dev",
+    "keywords": [
+        "Gearman",
+        "ETL process",
+        "multi-process",
+        "gabbydgab",
+    ],
+    "homepage": "https://github.com/gabbydgab/GdgGearmanStrategy",
+    "authors": [
+        {
+            "name": "Gab Amba",
+            "email": "gamba@gabbydgab.com",
+            "homepage": "http://www.gabbydgab.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "3.7.*"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.0-dev"
+        }
+    },
+    "autoload": {
+        "psr-0": {
+            "GdgGearman": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }    
+}
