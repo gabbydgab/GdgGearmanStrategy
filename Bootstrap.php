@@ -33,5 +33,5 @@ namespace GdgGearmanTest;
 require __DIR__ . "/vendor/autoload.php";
 
 //GdgGearman classes
-require __DIR__ . "autoload_classmap.php";
+require __DIR__ . "/autoload_classmap.php";
 
