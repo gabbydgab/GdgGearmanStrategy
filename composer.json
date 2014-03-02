@@ -32,10 +32,8 @@
     },
     "autoload": {
         "psr-0": {
+            "GdgGearmanDemo": "demo/",
             "GdgGearman": "src/"
-        },
-        "classmap": [
-            "./Module.php"
-        ]
-    }    
+        }
+    }
 }
