@@ -1,4 +1,4 @@
-GdgGearmanStratery
+GdgGearmanStrategy
 ==================
 
-Abstract library that allows multiple processing strategies for Gearman enabled application
+Abstract gearman library that allows multi-processing strategies for ETL applications
