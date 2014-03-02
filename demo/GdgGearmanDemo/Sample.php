@@ -29,3 +29,6 @@
 
 namespace GdgGearmanDemo\Sample;
 
+require __DIR__ . '/Controller/SampleGearmanWorker.php';
+
+$controller = new Controller\SampleGearmanWorker();
