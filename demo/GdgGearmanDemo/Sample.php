@@ -29,6 +29,18 @@
 
 namespace GdgGearmanDemo\Sample;
 
-require __DIR__ . '/Controller/SampleGearmanWorker.php';
+require __DIR__ . '/../../vendor/autoload.php';
 
+//Concrete implementation on your processing tasks
+//You can state what are your dependecies in order to perform your process
+$strategy = new Strategy\DefaultWorkerStrategy();
+
+//Generic adapter class that manages the abtracted strategy
+$adapter = new \GdgGearman\Worker\Adapter\WorkerStrategyAdapter($strategy);
+
+//This is a simple controller class, you can also have a Zend Controller class
 $controller = new Controller\SampleGearmanWorker();
+$controller->setAdapter($adapter); //you can override this method
+$controller->setFunctionName("work"); //you can override this method
+
+echo $controller->performWorkAction(); //will return "Running worker"
