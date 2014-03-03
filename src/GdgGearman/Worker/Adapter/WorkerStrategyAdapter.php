@@ -43,8 +43,7 @@ class WorkerStrategyAdapter implements AdapterAwareInterface
      * @var \GdgGearman\Worker\Strategy\AbstractWorkerStrategy
      */
     private $_strategy;
-    
-    
+        
     /**
      * 
      * @param \GdgGearman\Worker\Strategy\AbstractWorkerStrategy $strategy
@@ -52,7 +51,7 @@ class WorkerStrategyAdapter implements AdapterAwareInterface
     public function __construct(AbstractWorkerStrategy $strategy)
     {
         $this->_strategy = $strategy;
-    }    
+    }
     
     /**
      * 
@@ -63,7 +62,11 @@ class WorkerStrategyAdapter implements AdapterAwareInterface
         return $this->_strategy;
     }
     
-    
+    /**
+     * Hides the concrete implementation of the worker strategy
+     * 
+     * @return string
+     */
     public function executeWork()
     {
         return $this->getStrategy()->work();

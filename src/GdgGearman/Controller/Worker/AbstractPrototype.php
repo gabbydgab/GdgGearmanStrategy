@@ -40,9 +40,8 @@ use GdgGearman\Worker\Adapter\WorkerStrategyAdapter;
 
 abstract class AbstractPrototype implements AwareInterface
 {
-    
-    
     private $_functionName = "";
+    
     private $_callableFunction = "_execute";
     
     /**
@@ -87,5 +86,10 @@ abstract class AbstractPrototype implements AwareInterface
     public function getAdapter()
     {
         return $this->_adapter;
+    }
+    
+    public function performWorkAction()
+    {
+        return $this->getAdapter()->executeWork();
     }
 }

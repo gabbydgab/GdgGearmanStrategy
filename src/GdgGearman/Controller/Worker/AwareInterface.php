@@ -70,4 +70,7 @@ interface AwareInterface
      */
     public function getAdapter();
     
+    
+    public function performWorkAction();
+    
 }
