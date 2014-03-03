@@ -31,6 +31,7 @@
  * GdgGearman\Worker\Adapter\WorkerStrategyAdapter
  *
  * @author Gab Amba <gamba@gabbydgab.com>
+ * @package GdgGearman\Worker\Adapter
  */
 
 namespace GdgGearman\Worker\Adapter;
