@@ -47,6 +47,11 @@ interface AdapterAwareInterface
     public function __construct(AbstractWorkerStrategy $strategy);
     
     /**
+     * Analyzes the payload information
+     */
+    public function init();
+
+    /**
      * 
      * @return \GdgGearman\Worker\Strategy\AbstractWorkerStrategy
      */

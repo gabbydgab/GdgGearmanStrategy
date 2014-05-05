@@ -38,5 +38,7 @@ namespace GdgGearman\Worker\Strategy;
 
 interface StrategyAwareInterface
 {
+    public function work();
     
+    public function initialize();
 }

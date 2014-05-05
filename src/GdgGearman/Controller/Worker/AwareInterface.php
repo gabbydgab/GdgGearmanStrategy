@@ -37,8 +37,9 @@
 namespace GdgGearman\Controller\Worker;
 
 use GdgGearman\Worker\Adapter\WorkerStrategyAdapter;
+use GdgGearman\Gearman\WokerAwareInterface;
 
-interface AwareInterface
+interface AwareInterface extends WokerAwareInterface
 {
     /**
      * Sets the name of a function to register with the job server

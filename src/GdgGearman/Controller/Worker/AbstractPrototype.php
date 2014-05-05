@@ -37,12 +37,18 @@
 namespace GdgGearman\Controller\Worker;
 
 use GdgGearman\Worker\Adapter\WorkerStrategyAdapter;
+use GearmanJob;
 
 abstract class AbstractPrototype implements AwareInterface
 {
     private $_functionName = "";
     
-    private $_callableFunction = "_execute";
+    private $_callableFunction = "_doWork";
+    
+    /**
+     * @var GearmanWorker
+     */
+    private $_worker;
     
     /**
      * @var \GdgGearman\Worker\Adapter\WorkerStrategyAdapter
@@ -88,8 +94,39 @@ abstract class AbstractPrototype implements AwareInterface
         return $this->_adapter;
     }
     
+    public function setGearmanWorker(\GearmanWorker $worker)
+    {
+        $this->_worker = $worker;
+    }
+    
+    public function getGearmanWorker()
+    {
+        return $this->_worker;
+    }
+    
+    /**
+     * @return void
+     */
     public function performWorkAction()
     {
+        $this->getGearmanWorker()->addFunction(
+            $this->getFunctionName(),
+            [$this, $this->_callableFunction]
+        );
+        
+        while (true) {
+            $this->getGearmanWorker()->work();            
+            if ($this->getGearmanWorker()->returnCode() != "GEARMAN_SUCCESS") {
+                break;
+            }
+        }
+    }
+    
+    private function _doWork(\GearmanJob $job)
+    {
+        $this->_payload = [];
+        $this->getAdapter()->init($this->_payload);
+        
         return $this->getAdapter()->executeWork();
     }
 }

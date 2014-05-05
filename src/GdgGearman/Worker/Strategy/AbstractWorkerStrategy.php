@@ -39,4 +39,6 @@ namespace GdgGearman\Worker\Strategy;
 abstract class AbstractWorkerStrategy implements StrategyAwareInterface
 {
     abstract public function work();
+    
+    abstract public function initialize();
 }

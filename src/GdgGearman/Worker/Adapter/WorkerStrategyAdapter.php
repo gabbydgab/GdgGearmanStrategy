@@ -63,6 +63,12 @@ class WorkerStrategyAdapter implements AdapterAwareInterface
         return $this->_strategy;
     }
     
+    public function init()
+    {
+        $this->getStrategy();
+    }
+
+
     /**
      * Hides the concrete implementation of the worker strategy
      * 
