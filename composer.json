@@ -2,13 +2,11 @@
     "name": "gabbydgab/gdg-gearman",
     "description": "Abstract gearman library that allows multi-processing strategies especially for ETL applications",
     "license": "BSD-2-Clause",
-    "type": "library",
-    "minimum-stability": "dev",
+    "type": "library",    
     "keywords": [
         "Gearman",
         "ETL process",
-        "multi-process",
-        "gabbydgab"
+        "multi-process strategy"
     ],
     "homepage": "https://github.com/gabbydgab/GdgGearmanStrategy",
     "authors": [
